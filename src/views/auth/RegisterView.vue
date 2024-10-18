@@ -2,7 +2,7 @@
     <div class="box">
       <div class="left"></div>
       <div class="right">
-        <h4>注 册</h4>
+        <h4> 注  册 </h4>
         <form @submit.prevent="handleSubmit">
           <input class="acc" type="text" v-model="username" placeholder="用户名" />
           <input class="acc" type="password" v-model="password" placeholder="密码" />
