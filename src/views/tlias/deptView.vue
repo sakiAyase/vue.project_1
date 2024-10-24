@@ -1,9 +1,9 @@
 <template>
     <div>
-        <el-container style="height: 100vh;">
-            <el-header class="system-header">学生信息管理系统</el-header>
+        <el-container style="height: 900px; border: 1px solid #eee">
+            <el-header style="font-size:40px;background-color: rgb(238, 241, 246)">学生信息系统</el-header>
             <el-container>
-                <el-aside width="230px" class="sidebar">
+                <el-aside width="230px" style="border: 1px solid #eee">
                     <el-menu :default-openeds="['1', '3']">
                         <el-submenu index="1">
                             <template slot="title"><i class="el-icon-message"></i>导航</template>
@@ -135,24 +135,22 @@ export default {
         },
     },
     mounted() {
-        // //发送异步请求
-        // if(sessionStorage.length==0){
-        //     this.$router.push({
-        //                 path:'/log',
-        //             })
-        // }
-        // axios({
-        //     method:'get',
-        //     url:"http://localhost:8044/emp/page?page=1&pageSize=10"         
-        // }).then((result) => {
-        //     this.total = result.data.data.total;
-        //     this.tableData = result.data.data.rows; 
-        // })
+        //发送异步请求
+        if(sessionStorage.length==0){
+            this.$router.push({
+                        path:'/log',
+                    })
+        }
+        axios({
+            method:'get',
+            url:"http://localhost:8044/emp/page?page=1&pageSize=10"         
+        }).then((result) => {
+            this.total = result.data.data.total;
+            this.tableData = result.data.data.rows; 
+        })
     },
     created() {
     },
 }
 </script>
-<style scoped>
-@import '@/assets/css/MainView.css';
-</style>
+<style></style>
