@@ -35,6 +35,11 @@ const routes = [
     path: '/ClC',
     name: 'ClC',
     component: () => import(/* webpackChunkName: "about" */ '../views/tlias/ClassComponent.vue')
+  },
+  {
+    path: '/IMG',
+    name: 'img',
+    component: () => import(/* webpackChunkName: "about" */ '../views/tlias/ImageView.vue')
   }
 
 ]
