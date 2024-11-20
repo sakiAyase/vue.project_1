@@ -13,8 +13,13 @@ const routes = [
   },
   {
     path:'/log',
-    name:'log',
-    component:()=>import('../views/tlias/LoginView.vue')
+    name:'login',
+    component:()=>import('../views/auth/LoginView.vue')
+  },  
+  {
+    path:'/reg',
+    name:'register',
+    component:()=>import('../views/auth/RegisterView.vue')
   },
   {
     path: '/emp',

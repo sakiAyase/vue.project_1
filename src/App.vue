@@ -1,8 +1,8 @@
 <template>
   <div >
     <!-- <h1>{{ message }}</h1> -->
-<!--      <ElementView></ElementView> -->
-<!-- <emp-view></emp-view> -->
+      <!--      <ElementView></ElementView> -->
+    <!-- <emp-view></emp-view> -->
 <router-view/>
   </div>
 </template><!--模板部分，由他生成HTML代码-->
@@ -26,7 +26,7 @@ export default{
 </script>
 <!---控制模板的数据来源和行为-->
 <style>
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -42,5 +42,5 @@ nav a {
 }
 nav a.router-link-exact-active {
   color: #42b983;
-}
-</style><!-- css样式部分 -->
+} */
+</style>
