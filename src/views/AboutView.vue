@@ -1,5 +1,5 @@
 <template>
   <div class="about">
-    <h1>BackEnd是工作，FrontEnd是生活 -by L4p</h1>
+    <h1>This is an about page</h1>
   </div>
 </template>

@@ -3,7 +3,6 @@ import App from './App.vue'
 import router from './router'//这里已经导入了路由信息了
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import './assets/css/LoginView.css';
 
 import  axios  from 'axios';
 axios.interceptors.request.use(config=>{
