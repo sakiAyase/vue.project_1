@@ -4,9 +4,11 @@
     <div class="right">
       <h4> 登  录 </h4>
       <form @submit.prevent="handleSubmit">
-        <input class="acc" type="text" v-model="username" placeholder="用户名" />
-        <input class="acc" type="password" v-model="password" placeholder="密码" />
-        <input class="submit" type="submit" value="登录" />
+
+        <input class="acc" type="text" v-model="ruleForm.name" placeholder="用户名" />
+        <input class="acc" type="password" v-model="ruleForm.password" placeholder="密码" />
+        <input class="submit" :disabled="isLoading" type="submit" value="登录" />
+
       </form>
       <div class="fn">
         <a href="javascript:;" @click="goToRegister">注册账号</a>
@@ -22,29 +24,29 @@ export default {
     data() {
       return {
         ruleForm: {
-          username: '',
+          name: '',
           password: ''
         },
-        rules: {
-          username: [
-            { required: true, message: '用户名不能为空', trigger: 'blur' }
-          ],
-          password: [
-            { required: true, message: '密码不能为空', trigger: 'blur' }
-          ]
-        },
+        isLoading: false,  // 登录按钮状态
       };
     },
     methods: {
       resetForm() {
-        this.username = '';
-        this.password = '';
+        this.ruleForm.name = '';
+        this.ruleForm.password = '';
       },
       async handleSubmit() {
+        if (!this.ruleForm.name || !this.ruleForm.password) {
+          alert('用户名和密码不能为空');
+          return;
+        }
         try {
           const response = await axios.post('http://localhost:8044/login', {
-            username: this.username,
-            password: this.password,
+              name: this.ruleForm.name,
+              password: this.ruleForm.password
+              }, {headers:{
+                'Content-Type': 'application/json'
+              }
           });
           // 处理成功响应
           console.log('登录成功:', response.data);
@@ -53,7 +55,7 @@ export default {
             sessionStorage.setItem('token', response.data.token);
           }
           // 页面跳转
-          //this.$router.push('/dashboard'); // 假设登录成功后跳转到仪表板页面
+          this.$router.push('/emp'); // 假设登录成功后跳转到仪表板页面
         } catch (error) {
           // 处理错误
           this.resetForm();
