@@ -67,8 +67,7 @@ export default {
           this.$router.push('/reg');
       },
       recoverPassword() {
-        // 处理找回密码逻辑
-        console.log('跳转到找回密码页面')
+          this.$router.push('/find');
       }
     }
   }

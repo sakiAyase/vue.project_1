@@ -19,6 +19,11 @@ const routes = [
     component: ()=>import('../views/auth/RegisterView.vue')
   },
   {
+    path:'/find',
+    name:'find',
+    component: ()=>import('../views/auth/FindView.vue')
+  },
+  {
     path: '/emp',
     name: 'emp',
     component: ()=>import('../views/tlias/EmpView.vue')
